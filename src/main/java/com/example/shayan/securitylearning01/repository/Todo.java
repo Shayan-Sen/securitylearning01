@@ -1,7 +1,11 @@
 package com.example.shayan.securitylearning01.repository;
 
-import org.hibernate.annotations.UuidGenerator;
+import java.time.LocalDateTime;
 
+import org.hibernate.annotations.UuidGenerator;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -29,4 +33,8 @@ public class Todo {
     private String title;
 
     private String content;
+
+    @LastModifiedDate
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 }

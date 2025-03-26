@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,5 +34,5 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = { CascadeType.REMOVE }, orphanRemoval = true)
-    private List<Todo> todos;
+    private List<Todo> todos = new ArrayList<>();
 }
